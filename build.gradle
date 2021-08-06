@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath group: "net.minecraftforge.gradle", name: "ForgeGradle", version: "4.1.+", changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
     }
 }
 
@@ -16,7 +16,7 @@ version = "${project.minecraft}-${project.modVersion}"
 group = "sugardog.wasabi"
 archivesBaseName = project.modId
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = "1.8"
+java.toolchain.languageVersion = JavaLanguageVersion.of(16)
 
 minecraft {
     mappings channel: project.mappingsChannel, version: project.mappings
@@ -28,7 +28,7 @@ minecraft {
             property "forge.logging.console.level", "debug"
             property "mixin.env.disableRefMap", "true"
             mods {
-                template_mod {
+                wasabi {
                     source sourceSets.main
                 }
             }
@@ -39,7 +39,7 @@ minecraft {
             property "forge.logging.console.level", "debug"
             property "mixin.env.disableRefMap", "true"
             mods {
-                template_mod {
+                wasabi {
                     source sourceSets.main
                 }
             }
@@ -51,7 +51,7 @@ minecraft {
             property "mixin.env.disableRefMap", "true"
             args "--mod", project.modId, "--all", "--output", file("src/generated/resources/"), "--existing", file("src/main/resources")
             mods {
-                template_mod {
+                wasabi {
                     source sourceSets.main
                 }
             }
