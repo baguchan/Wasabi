@@ -1,4 +1,4 @@
-package sugardog.wasabi.data;
+package sugardog.wasabi.data.provider;
 
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;

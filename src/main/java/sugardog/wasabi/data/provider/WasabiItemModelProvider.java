@@ -1,4 +1,4 @@
-package sugardog.wasabi.data;
+package sugardog.wasabi.data.provider;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -32,6 +32,11 @@ public abstract class WasabiItemModelProvider extends ItemModelProvider {
 	public ItemModelBuilder item(Supplier<? extends Item> item, String location) {
 		return withExistingParent(item.get().getRegistryName().getPath(), mcLoc("item/generated"))
 				.texture("layer0", modLoc("item/" + location + item.get().getRegistryName().getPath()));
+	}
+
+	public ItemModelBuilder item(Supplier<? extends Item> item) {
+		return withExistingParent(item.get().getRegistryName().getPath(), mcLoc("item/generated"))
+				.texture("layer0", modLoc("item/" + item.get().getRegistryName().getPath()));
 	}
 
 	public ItemModelBuilder handheldItem(Supplier<? extends Item> item, String location) {

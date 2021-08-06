@@ -2,6 +2,7 @@ package sugardog.wasabi.data;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import sugardog.wasabi.data.provider.WasabiBlockStateProvider;
 
 public class WasabiBlockStateData extends WasabiBlockStateProvider {
 	public WasabiBlockStateData(DataGenerator generator, ExistingFileHelper fileHelper) {

@@ -1,12 +1,15 @@
 package sugardog.wasabi;
 
+import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
+import sugardog.wasabi.data.*;
 import sugardog.wasabi.registry.WasabiBlocks;
 import sugardog.wasabi.registry.WasabiItems;
 
@@ -42,6 +45,16 @@ public class WasabiMod {
 	}
 
 	private void dataSetup(GatherDataEvent event) {
-
+		DataGenerator generator = event.getGenerator();
+		ExistingFileHelper helper = event.getExistingFileHelper();
+		if (event.includeClient()) {
+			generator.addProvider(new WasabiBlockStateData(generator, helper));
+			generator.addProvider(new WasabiItemModelData(generator, helper));
+			generator.addProvider(new WasabiLangData(generator));
+		}
+		if (event.includeServer()) {
+			generator.addProvider(new WasabiRecipeData(generator));
+			generator.addProvider(new WasabiLootTableData(generator));
+		}
 	}
 }
