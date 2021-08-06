@@ -1,14 +1,14 @@
-package baguchan.wasabi.other;
+package sugardog.wasabi.other;
 
-import baguchan.wasabi.WasabiMod;
-import baguchan.wasabi.registry.WasabiDamageSource;
-import baguchan.wasabi.registry.WasabiItems;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import sugardog.wasabi.WasabiMod;
+import sugardog.wasabi.registry.WasabiDamageSource;
+import sugardog.wasabi.registry.WasabiItems;
 
 @Mod.EventBusSubscriber(modid = WasabiMod.MOD_ID)
 public class TemplateEvents {

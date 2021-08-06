@@ -1,6 +1,5 @@
-package baguchan.wasabi;
+package sugardog.wasabi;
 
-import baguchan.wasabi.registry.WasabiItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -8,6 +7,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import sugardog.wasabi.registry.WasabiItems;
 
 @Mod(WasabiMod.MOD_ID)
 public class WasabiMod {

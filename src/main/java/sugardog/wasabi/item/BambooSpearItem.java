@@ -1,4 +1,4 @@
-package baguchan.wasabi.item;
+package sugardog.wasabi.item;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;

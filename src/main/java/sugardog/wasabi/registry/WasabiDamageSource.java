@@ -1,4 +1,4 @@
-package baguchan.wasabi.registry;
+package sugardog.wasabi.registry;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.DamageSource;

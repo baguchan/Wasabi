@@ -1,13 +1,13 @@
-package baguchan.wasabi.registry;
+package sugardog.wasabi.registry;
 
-import baguchan.wasabi.WasabiMod;
-import baguchan.wasabi.item.BambooSpearItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import sugardog.wasabi.WasabiMod;
+import sugardog.wasabi.item.BambooSpearItem;
 
 @Mod.EventBusSubscriber(modid = WasabiMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class WasabiItems {
