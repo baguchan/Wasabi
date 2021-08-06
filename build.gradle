@@ -13,7 +13,7 @@ apply plugin: "eclipse"
 apply plugin: "maven-publish"
 
 version = "${project.minecraft}-${project.modVersion}"
-group = "baguchan.wasabi"
+group = "sugardog.wasabi"
 archivesBaseName = project.modId
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = "1.8"
