@@ -74,11 +74,11 @@ jar {
     manifest {
         attributes([
                 "Specification-Title"     : project.modName,
-                "Specification-Vendor"    : "sugarwolf125",
+                "Specification-Vendor"    : "sugardog125",
                 "Specification-Version"   : "1",
                 "Implementation-Title"    : project.modName,
                 "Implementation-Version"  : project.modVersion,
-                "Implementation-Vendor"   : "sugarwolf125",
+                "Implementation-Vendor"   : "sugardog125",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
         ])
     }
