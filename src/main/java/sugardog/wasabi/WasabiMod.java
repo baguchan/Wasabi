@@ -5,19 +5,21 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
+import sugardog.wasabi.registry.WasabiBlocks;
 import sugardog.wasabi.registry.WasabiItems;
 
-@Mod(WasabiMod.MOD_ID)
+@Mod(WasabiMod.MODID)
 public class WasabiMod {
-	public static final String MOD_ID = "wasabi";
+	public static final String MODID = "wasabi";
 
 	public WasabiMod() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		IEventBus modbus = FMLJavaModLoadingContext.get().getModEventBus();
 
+		WasabiBlocks.BLOCKS.register(modbus);
 		WasabiItems.ITEMS.register(modbus);
 
 		MinecraftForge.EVENT_BUS.register(this);

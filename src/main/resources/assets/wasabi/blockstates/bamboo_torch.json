@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "wasabi:block/bamboo_torch"
+    }
+  }
+}
