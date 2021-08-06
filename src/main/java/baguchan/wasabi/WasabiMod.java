@@ -1,6 +1,6 @@
-package com.teamabnormals.template_mod.core;
+package baguchan.wasabi;
 
-import com.minecraftabnormals.abnormals_core.core.util.registry.RegistryHelper;
+import baguchan.wasabi.registry.WasabiItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -9,15 +9,17 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-@Mod(TemplateMod.MOD_ID)
-public class TemplateMod {
-	public static final String MOD_ID = "template_mod";
-	public static final RegistryHelper REGISTRY_HELPER = new RegistryHelper(MOD_ID);
+@Mod(WasabiMod.MOD_ID)
+public class WasabiMod {
+	public static final String MOD_ID = "wasabi";
 
-	public TemplateMod() {
+	public WasabiMod() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-		REGISTRY_HELPER.register(bus);
+		IEventBus modbus = FMLJavaModLoadingContext.get().getModEventBus();
+
+		WasabiItems.ITEMS.register(modbus);
+
 		MinecraftForge.EVENT_BUS.register(this);
 
 		bus.addListener(this::commonSetup);
