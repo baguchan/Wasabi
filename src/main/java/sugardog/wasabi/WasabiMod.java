@@ -1,6 +1,8 @@
 package sugardog.wasabi;
 
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -40,7 +42,9 @@ public class WasabiMod {
 
 	private void clientSetup(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
-
+			ItemProperties.register(WasabiItems.KATANA.get(), new ResourceLocation("blocking"), (p_174590_, p_174591_, p_174592_, p_174593_) -> {
+				return p_174592_ != null && p_174592_.isUsingItem() && p_174592_.getUseItem() == p_174590_ ? 1.0F : 0.0F;
+			});
 		});
 	}
 

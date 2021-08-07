@@ -1,4 +1,6 @@
 {
+  "block.wasabi.bamboo_soul_torch": "Bamboo Soul Torch",
   "block.wasabi.bamboo_torch": "Bamboo Torch",
-  "item.wasabi.steel_ingot": "Steel"
+  "item.wasabi.katana": "Katana",
+  "item.wasabi.steel_ingot": "Steel Ingot"
 }

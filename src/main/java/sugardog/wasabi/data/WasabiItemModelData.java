@@ -20,5 +20,6 @@ public class WasabiItemModelData extends WasabiItemModelProvider {
 	protected void registerModels() {
 		item(WasabiItems.STEEL);
 		itemBlock(WasabiBlocks.BAMBOO_TORCH);
+		itemBlock(WasabiBlocks.BAMBOO_SOUL_TORCH);
 	}
 }

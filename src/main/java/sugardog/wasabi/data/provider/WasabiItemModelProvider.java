@@ -6,7 +6,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.client.model.generators.ModelBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import sugardog.wasabi.WasabiMod;
 
@@ -39,18 +38,9 @@ public abstract class WasabiItemModelProvider extends ItemModelProvider {
 				.texture("layer0", modLoc("item/" + item.get().getRegistryName().getPath()));
 	}
 
-	public ItemModelBuilder handheldItem(Supplier<? extends Item> item, String location) {
+	public ItemModelBuilder handheldItem(Supplier<? extends Item> item) {
 		return withExistingParent(item.get().getRegistryName().getPath(), mcLoc("item/handheld"))
-				.texture("layer0", modLoc("item/" + location + item.get().getRegistryName().getPath()));
-	}
-
-	public ItemModelBuilder lanceItem(Supplier<? extends Item> item, String location) {
-		return withExistingParent(item.get().getRegistryName().getPath(), mcLoc("item/handheld"))
-				.texture("layer0", modLoc("item/" + location + item.get().getRegistryName().getPath()))
-				.transforms()
-				.transform(ModelBuilder.Perspective.THIRDPERSON_RIGHT).rotation(0.0F, -90.0F, 45.0F).translation(0.0F, 1.0F, -5.0F).scale(0.85F, 0.85F, 0.85F).end()
-				.transform(ModelBuilder.Perspective.THIRDPERSON_LEFT).rotation(0.0F, 90.0F, -45.0F).translation(0.0F, 1.0F, -5.0F).scale(0.85F, 0.85F, 0.85F).end()
-				.end();
+				.texture("layer0", modLoc("item/" + item.get().getRegistryName().getPath()));
 	}
 
 	public ItemModelBuilder bowItem(Supplier<? extends Item> item, String location) {
@@ -64,10 +54,10 @@ public abstract class WasabiItemModelProvider extends ItemModelProvider {
 				.override().predicate(new ResourceLocation("pulling"), 1).predicate(new ResourceLocation("pull"), 0.9F).model(getExistingFile(modLoc("item/" + item.get().getRegistryName().getPath() + "_pulling_2"))).end();
 	}
 
-	public ItemModelBuilder dyedItem(Supplier<? extends Item> item, String location) {
+	public ItemModelBuilder dyedItem(Supplier<? extends Item> item) {
 		return withExistingParent(item.get().getRegistryName().getPath(), mcLoc("item/generated"))
-				.texture("layer0", modLoc("item/" + location + item.get().getRegistryName().getPath()))
-				.texture("layer1", modLoc("item/" + location + item.get().getRegistryName().getPath() + "_overlay"));
+				.texture("layer0", modLoc("item/" + item.get().getRegistryName().getPath()))
+				.texture("layer1", modLoc("item/" + item.get().getRegistryName().getPath() + "_overlay"));
 	}
 
 	public ItemModelBuilder eggItem(Supplier<? extends Item> item) {

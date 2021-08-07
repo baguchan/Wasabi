@@ -1,4 +1,6 @@
 {
   "item.wasabi.steel_ingot": "鋼インゴット",
-  "block.wasabi.bamboo_torch": "竹のお香"
+  "item.wasabi.katana": "刀",
+  "block.wasabi.bamboo_torch": "竹のお香",
+  "block.wasabi.bamboo_soul_torch": "竹の魂のお香"
 }

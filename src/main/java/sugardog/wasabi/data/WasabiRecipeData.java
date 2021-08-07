@@ -6,8 +6,10 @@ import net.minecraft.data.HashCache;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import sugardog.wasabi.registry.WasabiBlocks;
+import sugardog.wasabi.registry.WasabiItems;
 
 import java.nio.file.Path;
 import java.util.function.Consumer;
@@ -29,6 +31,23 @@ public class WasabiRecipeData extends RecipeProvider {
 				.define('B', Blocks.BAMBOO)
 				.define('T', Blocks.TORCH)
 				.unlockedBy("has_bamboo", has(Blocks.BAMBOO))
+				.save(p_176532_);
+
+		ShapedRecipeBuilder.shaped(WasabiBlocks.BAMBOO_SOUL_TORCH.get(), 1)
+				.pattern("BTB")
+				.pattern("BBB")
+				.define('B', Blocks.BAMBOO)
+				.define('T', Blocks.SOUL_TORCH)
+				.unlockedBy("has_bamboo", has(Blocks.BAMBOO))
+				.save(p_176532_);
+
+		ShapedRecipeBuilder.shaped(WasabiItems.KATANA.get(), 1)
+				.pattern("  I")
+				.pattern(" I ")
+				.pattern("S  ")
+				.define('I', WasabiItems.STEEL.get())
+				.define('S', Items.STICK)
+				.unlockedBy("has_bamboo", has(WasabiItems.STEEL.get()))
 				.save(p_176532_);
 	}
 

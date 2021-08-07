@@ -1,5 +1,6 @@
 package sugardog.wasabi.registry;
 
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -22,10 +23,14 @@ public class WasabiBlocks {
 
 	public static final RegistryObject<Block> BAMBOO_TORCH = BLOCKS.register("bamboo_torch", () -> new BambooTorchBlock(BlockBehaviour.Properties.of(Material.BAMBOO).noOcclusion().strength(1.0F, 2.0F).lightLevel((p_50886_) -> {
 		return 14;
-	}).sound(SoundType.BAMBOO)));
+	}).sound(SoundType.BAMBOO), ParticleTypes.FLAME));
+	public static final RegistryObject<Block> BAMBOO_SOUL_TORCH = BLOCKS.register("bamboo_soul_torch", () -> new BambooTorchBlock(BlockBehaviour.Properties.of(Material.BAMBOO).noOcclusion().strength(1.0F, 2.0F).lightLevel((p_50886_) -> {
+		return 10;
+	}).sound(SoundType.BAMBOO), ParticleTypes.SOUL_FIRE_FLAME));
 
 	@SubscribeEvent
 	public static void registerBlockItems(RegistryEvent.Register<Item> event) {
 		WasabiItems.register(event, new BlockItem(BAMBOO_TORCH.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
+		WasabiItems.register(event, new BlockItem(BAMBOO_SOUL_TORCH.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
 	}
 }

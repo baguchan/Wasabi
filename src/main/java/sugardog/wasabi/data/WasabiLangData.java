@@ -50,6 +50,8 @@ public class WasabiLangData extends LanguageProvider {
 	@Override
 	protected void addTranslations() {
 		addBlock(WasabiBlocks.BAMBOO_TORCH, "Bamboo Torch");
-		addItem(WasabiItems.STEEL, "Steel");
+		addBlock(WasabiBlocks.BAMBOO_SOUL_TORCH, "Bamboo Soul Torch");
+		addItem(WasabiItems.KATANA, "Katana");
+		addItem(WasabiItems.STEEL, "Steel Ingot");
 	}
 }

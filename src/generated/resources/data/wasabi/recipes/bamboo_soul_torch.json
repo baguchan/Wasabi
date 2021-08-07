@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BTB",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:bamboo"
+    },
+    "T": {
+      "item": "minecraft:soul_torch"
+    }
+  },
+  "result": {
+    "item": "wasabi:bamboo_soul_torch"
+  }
+}

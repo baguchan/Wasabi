@@ -2,6 +2,7 @@ package sugardog.wasabi.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -20,10 +21,12 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import java.util.Random;
 
 public class BambooTorchBlock extends Block {
+	protected final ParticleOptions flameParticle;
 	protected static final VoxelShape AABB;
 
-	public BambooTorchBlock(BlockBehaviour.Properties properties) {
+	public BambooTorchBlock(BlockBehaviour.Properties properties, ParticleOptions p_57492_) {
 		super(properties);
+		this.flameParticle = p_57492_;
 	}
 
 	public void animateTick(BlockState p_57494_, Level p_57495_, BlockPos p_57496_, Random p_57497_) {
@@ -31,7 +34,7 @@ public class BambooTorchBlock extends Block {
 		double var7 = (double) p_57496_.getY() + 0.45D;
 		double var9 = (double) p_57496_.getZ() + 0.5D;
 		p_57495_.addParticle(ParticleTypes.SMOKE, var5, var7, var9, 0.0D, 0.0D, 0.0D);
-		p_57495_.addParticle(ParticleTypes.FLAME, var5, var7, var9, 0.0D, 0.0D, 0.0D);
+		p_57495_.addParticle(this.flameParticle, var5, var7, var9, 0.0D, 0.0D, 0.0D);
 	}
 
 	public boolean canSurvive(BlockState p_153479_, LevelReader p_153480_, BlockPos p_153481_) {

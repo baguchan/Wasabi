@@ -45,6 +45,7 @@ public class WasabiLootTableData extends LootTableProvider {
 		@Override
 		protected void addTables() {
 			dropSelf(WasabiBlocks.BAMBOO_TORCH);
+			dropSelf(WasabiBlocks.BAMBOO_SOUL_TORCH);
 		}
 
 		@Override
