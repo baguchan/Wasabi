@@ -5,6 +5,7 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.LanguageProvider;
 import sugardog.wasabi.WasabiMod;
 import sugardog.wasabi.registry.WasabiBlocks;
+import sugardog.wasabi.registry.WasabiEntityTypes;
 import sugardog.wasabi.registry.WasabiItems;
 
 import java.util.function.Supplier;
@@ -53,5 +54,9 @@ public class WasabiLangData extends LanguageProvider {
 		addBlock(WasabiBlocks.BAMBOO_SOUL_TORCH, "Bamboo Soul Torch");
 		addItem(WasabiItems.KATANA, "Katana");
 		addItem(WasabiItems.STEEL, "Steel Ingot");
+
+		addItem(WasabiItems.TENGU_ILLAGER_SPAWNEGG, "TenguIllager SpawnEgg");
+
+		addEntityType(WasabiEntityTypes.TENGU_ILLAGER, "Tengu Illager");
 	}
 }

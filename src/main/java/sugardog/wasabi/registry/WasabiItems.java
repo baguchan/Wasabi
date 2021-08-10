@@ -4,6 +4,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fmllegacy.RegistryObject;
@@ -18,6 +19,7 @@ public class WasabiItems {
 
 	public static final RegistryObject<Item> STEEL = ITEMS.register("steel_ingot", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 	public static final RegistryObject<Item> KATANA = ITEMS.register("katana", () -> new KatanaItem(new Item.Properties().durability(346).tab(CreativeModeTab.TAB_COMBAT)));
+	public static final RegistryObject<Item> TENGU_ILLAGER_SPAWNEGG = ITEMS.register("tengu_illager_spawnegg", () -> new SpawnEggItem(WasabiEntityTypes.TENGU_ILLAGER_TYPE, 9804699, 1973274, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
 
 	public static void register(RegistryEvent.Register<Item> registry, Item item, String id) {

@@ -1,6 +1,8 @@
 {
   "item.wasabi.steel_ingot": "鋼インゴット",
   "item.wasabi.katana": "刀",
+  "item.wasabi.tengu_illager_spawnegg": "天狗イリジャーのスポーンエッグ",
   "block.wasabi.bamboo_torch": "竹のお香",
-  "block.wasabi.bamboo_soul_torch": "竹の魂のお香"
+  "block.wasabi.bamboo_soul_torch": "竹の魂のお香",
+  "entity.wasabi.tengu_illager": "天狗イリジャー"
 }

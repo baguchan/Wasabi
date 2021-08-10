@@ -69,6 +69,6 @@ public class BambooTorchBlock extends Block {
 	}
 
 	static {
-		AABB = Shapes.or(Block.box(3.5D, 0.0D, 3.5D, 11.5D, 8.0D, 11.5D));
+		AABB = Shapes.or(Block.box(4.5D, 0.0D, 4.5D, 11.5D, 8.0D, 11.5D));
 	}
 }

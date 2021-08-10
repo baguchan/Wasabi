@@ -1,6 +1,8 @@
 {
   "block.wasabi.bamboo_soul_torch": "Bamboo Soul Torch",
   "block.wasabi.bamboo_torch": "Bamboo Torch",
+  "entity.wasabi.tengu_illager": "Tengu Illager",
   "item.wasabi.katana": "Katana",
-  "item.wasabi.steel_ingot": "Steel Ingot"
+  "item.wasabi.steel_ingot": "Steel Ingot",
+  "item.wasabi.tengu_illager_spawnegg": "TenguIllager SpawnEgg"
 }

@@ -13,6 +13,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import sugardog.wasabi.data.*;
 import sugardog.wasabi.registry.WasabiBlocks;
+import sugardog.wasabi.registry.WasabiEntityTypes;
 import sugardog.wasabi.registry.WasabiItems;
 
 @Mod(WasabiMod.MODID)
@@ -26,6 +27,7 @@ public class WasabiMod {
 
 		WasabiBlocks.BLOCKS.register(modbus);
 		WasabiItems.ITEMS.register(modbus);
+		WasabiEntityTypes.ENTITIES.register(modbus);
 
 		MinecraftForge.EVENT_BUS.register(this);
 

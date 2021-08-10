@@ -21,5 +21,7 @@ public class WasabiItemModelData extends WasabiItemModelProvider {
 		item(WasabiItems.STEEL);
 		itemBlock(WasabiBlocks.BAMBOO_TORCH);
 		itemBlock(WasabiBlocks.BAMBOO_SOUL_TORCH);
+
+		eggItem(WasabiItems.TENGU_ILLAGER_SPAWNEGG);
 	}
 }
