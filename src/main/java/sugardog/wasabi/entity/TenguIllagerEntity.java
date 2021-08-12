@@ -2,6 +2,7 @@ package sugardog.wasabi.entity;
 
 import com.google.common.collect.Maps;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
@@ -16,6 +17,7 @@ import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
+import net.minecraft.world.entity.ai.util.GoalUtils;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraft.world.entity.monster.Monster;
@@ -60,6 +62,15 @@ public class TenguIllagerEntity extends AbstractIllager {
 		this.goalSelector.addGoal(8, new RandomStrollGoal(this, 0.6D));
 		this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 3.0F, 1.0F));
 		this.goalSelector.addGoal(10, new LookAtPlayerGoal(this, Mob.class, 8.0F));
+	}
+
+	protected void customServerAiStep() {
+		if (!this.isNoAi() && GoalUtils.hasGroundPathNavigation(this)) {
+			boolean flag = ((ServerLevel) this.level).isRaided(this.blockPosition());
+			((GroundPathNavigation) this.getNavigation()).setCanOpenDoors(flag);
+		}
+
+		super.customServerAiStep();
 	}
 
 	@Nullable

@@ -9,6 +9,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraftforge.api.distmarker.Dist;
@@ -110,7 +111,29 @@ public class TenguIllagerModel<T extends TenguIllagerEntity> extends Hierarchica
 			if (p_102928_.getMainHandItem().isEmpty()) {
 				AnimationUtils.animateZombieArms(this.leftArm, this.rightArm, true, this.attackTime, p_102931_);
 			} else {
-				AnimationUtils.swingWeaponDown(this.rightArm, this.leftArm, p_102928_, this.attackTime, p_102931_);
+				float f = Mth.sin(this.attackTime * (float) Math.PI);
+				float f1 = Mth.sin((1.0F - (1.0F - this.attackTime) * (1.0F - this.attackTime)) * (float) Math.PI);
+
+				if (p_102928_.getUsedItemHand() == InteractionHand.MAIN_HAND) {
+					this.rightArm.xRot = -1.4849558F + Mth.cos(p_102931_ * 0.09F) * 0.05F;
+
+					this.leftArm.xRot = -1.4849558F + Mth.cos(p_102931_ * 0.09F) * 0.05F;
+					this.leftArm.yRot = 0.8F + Mth.cos(p_102931_ * 0.09F) * 0.05F;
+
+					this.rightArm.xRot += f * 0.6F - f1 * 0.05F;
+					this.rightArm.yRot -= f * 1.2F - f1 * 0.2F;
+					this.leftArm.xRot += f * 0.3F - f1 * 0.025F;
+					this.leftArm.yRot -= f * 1.2F - f1 * 0.2F;
+				} else {
+					this.rightArm.xRot = -1.4849558F + Mth.cos(p_102931_ * 0.09F) * 0.05F;
+					this.rightArm.yRot = -0.8F + Mth.cos(p_102931_ * 0.09F) * 0.05F;
+					this.leftArm.xRot = -1.4849558F + Mth.cos(p_102931_ * 0.09F) * 0.05F;
+
+					this.rightArm.xRot += f * 0.3F - f1 * 0.025F;
+					this.rightArm.yRot += f * 1.2F - f1 * 0.2F;
+					this.leftArm.xRot += f * 0.6F - f1 * 0.05F;
+					this.leftArm.yRot += f * 1.2F - f1 * 0.2F;
+				}
 			}
 		} else if (abstractillager$illagerarmpose == AbstractIllager.IllagerArmPose.SPELLCASTING) {
 			this.rightArm.z = 0.0F;
