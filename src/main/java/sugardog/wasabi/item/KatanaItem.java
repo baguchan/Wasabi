@@ -5,6 +5,7 @@ import com.google.common.collect.Multimap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
@@ -77,6 +78,7 @@ public class KatanaItem extends Item {
 			if (attacker.level instanceof ServerLevel) {
 				((ServerLevel) attacker.level).sendParticles(ParticleTypes.SWEEP_ATTACK, attacker.getX() + d0, attacker.getY(0.5D), attacker.getZ() + d1, 0, d0, 0.0D, d1, 0.0D);
 			}
+			attacker.playSound(SoundEvents.PLAYER_ATTACK_SWEEP, 1.0F, 1.0F);
 		}
 
 		return true;
